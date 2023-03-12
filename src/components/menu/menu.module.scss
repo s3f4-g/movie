@@ -1,0 +1,35 @@
+.root {
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: #1a171e;
+  color: white;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.logo {
+  display: flex;
+  align-self: center;
+}
+.logoImg {
+  height: 50px;
+  width: 50px;
+}
+.logoText {
+  font-size: 24px;
+  font-style: italic;
+  text-transform: capitalize;
+  color: #ff2424;
+  align-self: center;
+  padding: 10px;
+}
+.title {
+  color: gray;
+}
+.hr {
+  height: 0px;
+  color: black;
+  border: 1px solid gray;
+  width: 100%;
+}
