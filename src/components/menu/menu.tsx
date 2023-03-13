@@ -5,6 +5,9 @@ export interface MenuProps {
     className?: string;
 }
 
+const sortBy: string[] = ['Popularity', 'Most Voted', 'Release Date'];
+const genres: string[] = ['Action', 'Comedy', 'Horror'];
+
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-menus-and-templates
@@ -23,6 +26,24 @@ export const Menu = ({ className }: MenuProps) => {
             </div>
             <span className={styles.title}>Sort by</span>
             <hr className={styles.hr} />
+            <ul className={styles.list}>
+                {sortBy.map((item) => (
+                    <li className={styles.listItem} key={item}>
+                        {item}
+                    </li>
+                ))}
+            </ul>
+            <span className={styles.title}>
+                Genre
+                <hr className={styles.hr} />
+            </span>
+            <ul className={styles.list}>
+                {genres.map((item) => (
+                    <li className={styles.listItem} key={item}>
+                        {item}
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };
