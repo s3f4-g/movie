@@ -3,5 +3,8 @@ import { Favorite } from '../../../components/favorite/favorite';
 
 export default createBoard({
     name: 'Favorite',
-    Board: () => <Favorite />
+    Board: () => <Favorite />,
+    environmentProps: {
+        windowHeight: 538,
+    },
 });
