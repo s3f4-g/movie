@@ -9,7 +9,7 @@ export interface FavoriteCardProps {
         poster_path?: string;
         title?: string;
         overview: string;
-        vote_avarage: string;
+        vote_average: string;
         release_date: string;
     };
 }
@@ -26,7 +26,7 @@ export const FavoriteCard = ({ className, movie }: FavoriteCardProps) => {
             <img src={movie.poster_path} className={styles.fImg} />
             <div className={styles.detail}>
                 <h1 className={styles.title}>{movie.title} </h1>
-                <span>{movie.vote_avarage} </span>
+                <span>{movie.vote_average} </span>
             </div>
             <div className={styles.detele} onClick={()=>dispatch({type:"REMOVE_MOVIE",payload:movie})} > 
                 <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}></img>

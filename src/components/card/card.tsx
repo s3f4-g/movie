@@ -10,7 +10,7 @@ export interface CardProps {
         poster_path?: string;
         title?: string;
         overview: string;
-        vote_avarage: string;
+        vote_average: string;
         release_date: string;
     };
 }
@@ -26,7 +26,7 @@ export const Card = ({ className, movie }: CardProps) => {
             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className={styles.cardImg} />
             <div className={styles.detail}>
                 <h1>{movie.title}</h1>
-                <span className={styles.rating}>{movie.vote_avarage}</span>
+                <span className={styles.rating}>{movie.vote_average}</span>
                 <p className={styles.desc}>{movie.overview.substring(0,200)}</p>
                 <button className={styles.button} onClick={()=>dispatch({type:"ADD_MOVIE",payload:movie})} >+</button>
             </div>
