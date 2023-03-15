@@ -48,7 +48,7 @@ export const FavoriteContext = createContext<{
   state: initialState,
   dispatch: () => {}});
 
-export const FavoriteContextProvider: = ({ children }:ProviderProps) => {
+export const FavoriteContextProvider = ({ children }:ProviderProps) => {
   const [state, dispatch] = useReducer(FavoriteReducer, initialState);
 
   return (

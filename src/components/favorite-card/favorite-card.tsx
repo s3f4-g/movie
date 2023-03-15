@@ -1,6 +1,7 @@
 import styles from './favorite-card.module.scss';
 import classNames from 'classnames';
-
+import { useContext } from 'react';
+import { FavoriteContext } from '../../context/FavoriteContext'
 export interface FavoriteCardProps {
     className?: string;
     movie: {
@@ -18,6 +19,8 @@ export interface FavoriteCardProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-favorite-cards-and-templates
  */
 export const FavoriteCard = ({ className, movie }: FavoriteCardProps) => {
+    const { dispatch } = useContext(FavoriteContext)
+
     return (
         <div className={classNames(styles.root, className)}>
             <img src={movie.poster_path} className={styles.fImg} />
@@ -25,7 +28,7 @@ export const FavoriteCard = ({ className, movie }: FavoriteCardProps) => {
                 <h1 className={styles.title}>{movie.title} </h1>
                 <span>{movie.vote_avarage} </span>
             </div>
-            <div className={styles.detele}>
+            <div className={styles.detele} onClick={()=>dispatch({type:"REMOVE_MOVIE",payload:movie})} > 
                 <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}></img>
             </div>
         </div>
