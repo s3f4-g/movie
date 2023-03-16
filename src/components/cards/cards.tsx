@@ -1,8 +1,9 @@
 import styles from './cards.module.scss';
 import classNames from 'classnames';
 import { Card } from '../card/card';
-import { useState,useEffect } from 'react';
-
+import { useState,useEffect, useContext } from 'react';
+import { SearchContext } from '../../context/SearchContext';
+ 
 export interface Movie {
         id: number;
         poster_path?: string;
@@ -27,10 +28,20 @@ export interface CardsProps {
  */
 export const Cards = ({ className }: CardsProps) => {
     const [movies, setMovies] = useState<Movie[]>([])
+    const { state } = useContext(SearchContext)
+    const {sortBy, genre, query } = state;
+
 
     useEffect(()=>{
-        fetch('https://api.themoviedb.org/3/discover/movie/?api_key=3db8bf7718cc151710a63372f6ac871e').then(response=>response.json()).then((data) => setMovies(data.results)).catch((err) => console.log(err))
-    },[])
+        fetch(
+            query !== ''
+                ? `https://api.themoviedb.org/3/search/movie/?api_key=3db8bf7718cc151710a63372f6ac871e&query=${query}`
+                : `https://api.themoviedb.org/3/discover/movie/?api_key=3db8bf7718cc151710a63372f6ac871e&sort_by=${sortBy}&with_genres=${genre}`)
+        
+            .then(response=>response.json())
+            .then((data) => setMovies(data.results))
+            .catch((err) => console.log(err))
+    },[sortBy, genre, query])
 
     
     return (

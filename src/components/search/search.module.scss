@@ -6,6 +6,10 @@
   margin-bottom: 35px;
   overflow: hidden;
   font-weight: 600;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 .input {
   width: 50%;
@@ -17,12 +21,18 @@
   font-weight: 500;
   box-shadow: -0.09px 1px white;
   border: 0px solid black;
-  border-radius: 15;
   margin-bottom: 0px;
+  outline: none;
+  color: #b4b1b1;
 }
 .button {
   background-color: #ea5252;
   color: white;
   padding: 15px;
   opacity: 1;
+  overflow: hidden;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }

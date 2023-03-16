@@ -2,6 +2,7 @@ import styles from './favorite-card.module.scss';
 import classNames from 'classnames';
 import { useContext } from 'react';
 import { FavoriteContext } from '../../context/FavoriteContext'
+
 export interface FavoriteCardProps {
     className?: string;
     movie: {
@@ -9,7 +10,7 @@ export interface FavoriteCardProps {
         poster_path?: string;
         title?: string;
         overview: string;
-        vote_average: string;
+        vote_average: string | number;
         release_date: string;
     };
 }
