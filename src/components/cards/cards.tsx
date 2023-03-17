@@ -9,7 +9,7 @@ export interface Movie {
         poster_path?: string;
         title?: string;
         overview: string;
-        vote_average: string;
+        vote_average: number;
         release_date: string;
 }
 
@@ -20,12 +20,6 @@ export interface CardsProps {
 }
 
 
-
-
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/configuration-for-cardss-and-templates
- */
 export const Cards = ({ className }: CardsProps) => {
     const [movies, setMovies] = useState<Movie[]>([])
     const { state } = useContext(SearchContext)
