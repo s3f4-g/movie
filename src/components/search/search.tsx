@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import {useState, useContext} from 'react'
 import { SearchContext } from '../../context/SearchContext';
 
+
+
 export interface SearchProps {
     className?: string;
 }
