@@ -18,7 +18,8 @@ export const Favorite = ({ className }: FavoriteProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <h1>Favorites</h1>
-            {state.favorites.length > 0 && state.favorites.map((movie) => <FavoriteCard movie={movie} key={movie.id} />)}
+            {state.favorites.length > 0 &&
+                state.favorites.map((movie) => <FavoriteCard movie={movie} key={movie.id} />)}
         </div>
     );
 };
